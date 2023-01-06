@@ -5,6 +5,6 @@ class Cat:
         self.name = value
         self.age = age
     
-    def __init__(self):
-        print('Hello new object is ', self)
+    def __init__(self, name , breed, age, color):
+        print('Hello new object is ', self, name , breed, age, color)
 tom = Cat()
