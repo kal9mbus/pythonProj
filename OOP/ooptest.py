@@ -39,3 +39,45 @@ messi = SoccerPlayer('Lionel', "Messi")
 messi.make_assists(20)
 messi.score(30)
 messi.statistics()
+
+class Zebra():
+    def __init__(self, stripe = 'Полоска белая'):
+        self.stripe = stripe
+    def which_stripe(self):
+        if self.stripe == 'Полоска белая':
+            print('Полоска белая')
+            self.stripe = 'Полоска черная'
+        else:
+            print('Полоская черная')
+            self.stripe = 'Полоска белая'
+
+z1 = Zebra()
+z1.which_stripe()
+z1.which_stripe()
+z1.which_stripe()
+z1.which_stripe()
+z1.which_stripe()
+z1.which_stripe()
+
+z2 = Zebra()
+print()
+z2.which_stripe()
+
+class Person():
+    def __init__(self, first_name, last_name, age):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+    def full_name(self):
+        print(f"{self.first_name} {self.last_name}")
+    def is_adult(self):
+        if self.age >=18:
+            print("Больше 18 лет")
+        elif self.age <18 and self.age >=0:
+            print("Возраст меньше 18")
+        else:
+            print("Возраст не подходит")
+
+p1 = Person('Jimmy', 'Hendrix', -2)
+p1.full_name()
+p1.is_adult()
