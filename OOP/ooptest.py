@@ -1,10 +1,10 @@
 class Cat:
-    breed = 'pers'
-
-    def set_value(self, value, age=0):
-        self.name = value
+    def __init__(self, name , breed='pers', age=1, color='white'):
+        print(f'Hello new cat is {name}, he is  {breed}, and {age} years old. His color is {color}')
+        self.name = name
         self.age = age
-    
-    def __init__(self, name , breed, age, color):
-        print('Hello new object is ', self, name , breed, age, color)
-tom = Cat()
+        self.breed = breed
+        self.color = color
+
+tom = Cat('Tom')
+walt = Cat("Walt", 'britain', 2, 'black')
