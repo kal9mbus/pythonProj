@@ -81,3 +81,50 @@ class Person():
 p1 = Person('Jimmy', 'Hendrix', -2)
 p1.full_name()
 p1.is_adult()
+
+class Point():
+    list_points = []
+
+    def __init__(self, coord_x=0, coord_y=0):
+        self.move_to(coord_x, coord_y)
+        Point.list_points.append(self)
+    def move_to(self, new_x, new_y):
+        self.x = new_x
+        self.y = new_y
+    def go_home(self):
+        self.move_to(0,0)
+    def location(self):
+        print(f"X = {self.x} and y = {self.y}")
+
+p1 = Point(2)
+p1.location()
+p2 = Point(2,2)
+p2.location()
+p2.move_to(44,22)
+p2.location()
+print(Point.list_points[1].x)
+
+class Stack():
+    def __init__(self):
+        self.values = []
+    def push(self, item):
+        self.values.append(item)
+    def size(self):
+        print(len(self.values))
+    def pop(self):
+        del(self.values[-1])
+    def is_empty(self):
+        if not self.values:
+            return True
+        else:
+            return False
+st = Stack()
+st.push('cat')
+st.push('dog')
+st.size()
+st.pop()
+st.size()
+print(st.is_empty())
+st.pop()
+print(st.is_empty())
+
