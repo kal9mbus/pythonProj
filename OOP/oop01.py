@@ -56,22 +56,22 @@ print(b1.my_balance)
 del b1.my_balance
 print()
 print()
-class Person():
-    def __init__(self, name, age):
-        self._name = name
-        self._age = age
-    @property
-    def name(self):
-        return self._name
+# class Person():
+#     def __init__(self, name, age):
+#         self._name = name
+#         self._age = age
+#     @property
+#     def name(self):
+#         return self._name
     
-    @property
-    def age(self):
-        return self._age
+#     @property
+#     def age(self):
+#         return self._age
 
-p1 = Person('Kela', 30)
+# p1 = Person('Kela', 30)
 
-print()
-print()
+# print()
+# print()
 
 class Notebook():
     def __init__(self, notes):
@@ -135,3 +135,24 @@ class Robot():
 a = Robot("R2D2")
 a.say_hello()
 Robot.how_many()
+
+print()
+print()
+class Person():
+    def __init__(self, name, surname, gender = 'male'):
+        self.name = name
+        self.surname = surname
+        self.gender = gender
+    
+    @property
+    def gender(self):
+        return self.__gender
+    
+    @gender.setter
+    def gender(self, g):
+        if not g == 'female' or g == 'male':
+            print("Не знаю, что вы имели ввиду? Пусть это будет мальчик")
+            self.__gender = 'male'
+
+a = Person("valera", 'kak skazat')
+print(a.gender)
