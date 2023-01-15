@@ -143,16 +143,33 @@ class Person():
         self.name = name
         self.surname = surname
         self.gender = gender
-    
-    @property
-    def gender(self):
-        return self.__gender
-    
-    @gender.setter
-    def gender(self, g):
-        if not g == 'female' or g == 'male':
-            print("Не знаю, что вы имели ввиду? Пусть это будет мальчик")
-            self.__gender = 'male'
 
-a = Person("valera", 'kak skazat')
-print(a.gender)
+    def __str__(self):
+        if self.gender == 'male':
+            return(f"Гражданин {self.name} {self.surname}")
+        elif self.gender == 'female':
+            return(f"Гражданка {self.name} {self.surname}")
+        else:
+            self.gender = 'male'
+            return(f"Пусть будет гражданин с этого момента {self.name} {self.surname}")
+
+a = Person("valera", 'kak skazat', 'female')
+print(a)
+
+print()
+print()
+
+class Vector():
+    def __init__(self, *args):
+        self.values = sorted(args)
+        print(self.values)
+    
+    def __str__(self):
+        if self.values:
+            return f" Вектор({self.values})"
+        else:
+            return "Пустой вектор"
+a = Vector(1,2,3,4)
+b = Vector(2,3,4,5,6,7)
+c = Vector()
+
