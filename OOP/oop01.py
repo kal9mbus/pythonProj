@@ -132,7 +132,7 @@ class Robot():
     def how_many():
         print(f"Нас {Robot.population}")
 
-a = Robot("R2D2")
+a = Robot("R2D2") 
 a.say_hello()
 Robot.how_many()
 
